@@ -7,7 +7,7 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import StatisticCard from './components/StatisticCard.vue';
-  import TaskTable from './components/taskTable.vue';
+  import TaskTable from './components/TaskTable.vue';
 
   export default defineComponent({
     components: {

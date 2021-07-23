@@ -42,7 +42,7 @@
       </template>
       <div class="flex justify-between px-4 py-4">
         <CountTo :startVal="1" :endVal="urcallCount" class="text-2xl" />
-        <Icon :icon="'cell_phone|svg'" :size="40" />
+        <Icon :icon="'phone_on|svg'" :size="40" />
       </div>
     </Card>
   </div>
@@ -54,7 +54,7 @@
   import { Icon } from '/@/components/Icon';
   import { Card, Tag } from 'ant-design-vue';
   import { TaskStatistic } from '/@/api/task/model/taskModel';
-  import { getTaskStatistic } from '/@/api/task/task';
+  import { getTaskStatisticApi } from '/@/api/task/task';
 
   interface State {
     loading: Boolean;
@@ -74,7 +74,7 @@
 
       (async () => {
         state.loading = true;
-        const taskStatistic = await getTaskStatistic();
+        const taskStatistic = await getTaskStatisticApi();
         statistic.tasksCount = taskStatistic.tasksCount;
         statistic.urmessageCount = taskStatistic.urmessageCount;
         statistic.urcallCount = taskStatistic.urcallCount;

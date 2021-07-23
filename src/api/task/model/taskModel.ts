@@ -1,4 +1,9 @@
-import { PaginationResult } from '/@/api/model/baseModel';
+import { BasicFetchResult, BasicPageParams } from '/@/api/model/baseModel';
+
+/**
+ * @description task列表的请求参数
+ */
+export type TaskParams = BasicPageParams;
 
 export interface TaskStatistic {
   tasksCount: Number;
@@ -27,6 +32,4 @@ export type getTaskListModel = TaskItem[];
 /**
  * @description 分页的任务列表模型
  */
-export interface TaskListPage extends PaginationResult {
-  items: getTaskListModel;
-}
+export type TaskListPage = BasicFetchResult<TaskItem>;
